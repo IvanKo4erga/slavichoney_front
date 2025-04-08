@@ -2,15 +2,16 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 const user = tg.initDataUnsafe.user;
 console.log(user);
+const userData = {
+    user_id: user.id.toString(),
+    username: user.username || '',
+    first_name: user.first_name || '',
+    last_name: user.last_name || ''
+};
 link_back = 'https://kocherga.pythonanywhere.com'
 if (user) {
     
-    const userData = {
-        user_id: user.id.toString(),
-        username: user.username || '',
-        first_name: user.first_name || '',
-        last_name: user.last_name || ''
-    };
+    
     fetch(`${link_back}/save_user/`, {
         method: 'POST',
         headers: {
