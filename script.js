@@ -1,6 +1,7 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 const user = tg.initDataUnsafe.user;
+console.log('User');
 console.log(user);
 const userData = {
     user_id: user.id.toString(),
