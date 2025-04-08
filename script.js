@@ -3,7 +3,7 @@ tg.expand();
 const user = tg.initDataUnsafe.user;
 link_back = 'https://kocherga.pythonanywhere.com'
 if (user) {
-    const userData = {
+    window.userData = {
         user_id: user.id.toString(),
         username: user.username || '',
         first_name: user.first_name || '',
