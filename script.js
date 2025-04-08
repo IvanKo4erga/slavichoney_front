@@ -1,4 +1,4 @@
-/*let tg = window.Telegram.WebApp;
+let tg = window.Telegram.WebApp;
 tg.expand();
 const user = tg.initDataUnsafe.user;
 
@@ -22,14 +22,14 @@ if (user) {
         .catch(error => console.error('Error saving user', error));
 
 }
-*/
+
 //document.getElementById('showProducts').addEventListener('click', function(){
-const userData = {
+/*const userData = {
     user_id: '1234567890',
     username: 'kocherga',
     first_name: 'Ivan',
     last_name: 'Kocherga'
-};
+};*/
 cancelOrderBtn = document.getElementById('cancel-order');
 
 placeOrderBtn = document.getElementById('place-order');
