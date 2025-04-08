@@ -31,7 +31,7 @@ const userData = {
     last_name: 'Kocherga'
 };
 cancelOrderBtn = document.getElementById('cancel-order');
-cancelOrderBtn.addEventListener('click', show_products);
+
 placeOrderBtn = document.getElementById('place-order');
 //orderBtn = tg.MainButton;
 //orderBtn.text = 'Оформить';
@@ -140,7 +140,7 @@ placeOrderBtn.addEventListener('click', () => {
 
                 placeOrderBtn.classList.add('hidden');
                 cancelOrderBtn.classList.remove('hidden');
-
+                cancelOrderBtn.addEventListener('click', () => {cancel_order(data.order[0].order_id)});
                 let orderHtml = '<p class="pL">Номер заказа:' + data.order[0].order_id + '</p><br>';
                 let sum_order = 0;
                 data.order.forEach(orderItem => {
@@ -188,6 +188,27 @@ function confirm_order(order_id) {
         .catch(error => console.error('Place order error', error));
 }
 //)
+
+function cancel_order(order_id){
+    fetch('http://127.0.0.1:8000/cancel_order/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'user': userData,
+            'order_id': order_id
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Заказ отменен');
+            show_products();
+            //tg.close();
+        }
+        )
+        .catch(error => console.error('Cancel order error', error));
+}
 
 show_products();
 
