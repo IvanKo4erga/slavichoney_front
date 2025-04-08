@@ -12,7 +12,8 @@ if(tg != undefined){
   }    
 }
 else{
-    console.log(tg);
+
+    alert('tg undefined');
 }
 tg = window.Telegram.WebApp;
 tg.expand();
