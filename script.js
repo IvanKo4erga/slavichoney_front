@@ -1,7 +1,7 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 const user = tg.initDataUnsafe.user;
-
+link_back = 'kocherga.pythonanywhere.com'
 if (user) {
     const userData = {
         user_id: user.id.toString(),
@@ -10,7 +10,7 @@ if (user) {
         last_name: user.last_name || ''
     };
 
-    fetch('http://127.0.0.1:8000/save_user/', {
+    fetch(`${link}/save_user/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ placeOrderBtn = document.getElementById('place-order');
 //orderBtn = tg.MainButton;
 //orderBtn.text = 'Оформить';
 function show_products() {
-    fetch('http://127.0.0.1:8000/products/', {
+    fetch(`${link}/products/`, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -68,7 +68,7 @@ function show_products() {
                     });
                 //productHtml += userData;
                 document.getElementById('products').innerHTML = productHtml;
-                fetch('http://127.0.0.1:8000/products/', {
+                fetch(`${link}/products/`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ function show_products() {
 
 //document.getElementsByTagName("button").forEach(elem => elem.addEventListener('click',  
 function update_basket(product_id, redOrInc) {
-    fetch('http://127.0.0.1:8000/update_basket/', {
+    fetch(`${link}/update_basket/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -127,7 +127,7 @@ function update_basket(product_id, redOrInc) {
 
 placeOrderBtn.addEventListener('click', () => {
     //console.log('click');
-    fetch('http://127.0.0.1:8000/place_order/', {
+    fetch(`${link}/place_order/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -169,7 +169,7 @@ placeOrderBtn.addEventListener('click', () => {
 //tg.onEvent('mainButtonClicked', 
 function confirm_order(order_id) {
     console.log('confirm')
-    fetch('http://127.0.0.1:8000/confirm_order/', {
+    fetch(`${link}/confirm_order/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -190,7 +190,7 @@ function confirm_order(order_id) {
 //)
 
 function cancel_order(order_id){
-    fetch('http://127.0.0.1:8000/cancel_order/', {
+    fetch(`${link}/cancel_order/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
