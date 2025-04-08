@@ -457,3 +457,7 @@ textarea{
 form{
     margin-top: 16px;
 }
+
+.hidden{
+    display: none;
+}

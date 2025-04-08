@@ -3,14 +3,16 @@ import json
 import telebot
 from telebot.types import ReplyKeyboardMarkup, WebAppInfo, KeyboardButton
 
-TOKEN = "5275596119:AAEuhyVOFr2yD6x6pUtVqqk3sn5FiZA3Is0"
+from slavichoney_back.settings import TOKEN
+
+# TOKEN = "5275596119:AAEuhyVOFr2yD6x6pUtVqqk3sn5FiZA3Is0"
 bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=['start'])
 def welcome_message(message):
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
-    web_app = WebAppInfo("https://ivanko4erga.github.io/slavichoney/")
+    web_app = WebAppInfo("https://ivanko4erga.github.io/slavichoney_front/")
     button = KeyboardButton(text="Открыть Mini App", web_app=web_app)
     keyboard.add(button)
     bot.send_message(message.from_user.id, "Запусти приложение по кнопке ниже:", reply_markup=keyboard)
