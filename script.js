@@ -10,7 +10,7 @@ if (user) {
         last_name: user.last_name || ''
     };
 
-    fetch(`${link_back}/save_user/`, {
+    fetch(`${link_back}save_user/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ placeOrderBtn = document.getElementById('place-order');
 //orderBtn = tg.MainButton;
 //orderBtn.text = 'Оформить';
 function show_products() {
-    fetch(`${link_back}/products/`, {
+    fetch(`${link_back}products/`, {
         method: 'GET',
     })
         .then(response => response.json())
@@ -101,7 +101,7 @@ function show_products() {
 
 //document.getElementsByTagName("button").forEach(elem => elem.addEventListener('click',  
 function update_basket(product_id, redOrInc) {
-    fetch(`${link_back}/update_basket/`, {
+    fetch(`${link_back}update_basket/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -127,7 +127,7 @@ function update_basket(product_id, redOrInc) {
 
 placeOrderBtn.addEventListener('click', () => {
     //console.log('click');
-    fetch(`${link_back}/place_order/`, {
+    fetch(`${link_back}place_order/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -169,7 +169,7 @@ placeOrderBtn.addEventListener('click', () => {
 //tg.onEvent('mainButtonClicked', 
 function confirm_order(order_id) {
     console.log('confirm')
-    fetch(`${link_back}/confirm_order/`, {
+    fetch(`${link_back}confirm_order/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -190,7 +190,7 @@ function confirm_order(order_id) {
 //)
 
 function cancel_order(order_id){
-    fetch(`${link_back}/cancel_order/`, {
+    fetch(`${link_back}cancel_order/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
