@@ -20,6 +20,7 @@ tg.expand();
 const user = tg.initDataUnsafe.user;
 console.log('User');
 alert(user);
+alert(tg);
 
 link_back = 'https://kocherga.pythonanywhere.com'
 if (user) {
