@@ -30,68 +30,71 @@ const userData = {
     first_name: 'Ivan',
     last_name: 'Kocherga'
 };
-
+cancelOrderBtn = document.getElementById('cancel-order');
+cancelOrderBtn.addEventListener('click', show_products);
+placeOrderBtn = document.getElementById('place-order');
 //orderBtn = tg.MainButton;
 //orderBtn.text = 'Оформить';
-function show_products(){
-fetch('http://127.0.0.1:8000/products/', {
-    method: 'GET',
-})
-    .then(response => response.json())
-    .then(data => {
-        //data = JSON.parse(data);
-        if (data.products) {
-            document.getElementById('place-order').classList.remove('hidden');
-            document.getElementById('cancel-order').classList.add('hidden');
-            let productHtml = '';
-            console.log(data.products);
-            Object.keys(data.products).forEach(
-
-                product_category => {
-                    console.log(product_category);
-                    productHtml += '<h3>' + product_category + '</h3>';
-                    data.products[product_category].forEach(product => {
-                        productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="http://127.0.0.1:8000/static/slavichoney_app/images/' + product.image + '"> </div>';
-                        productHtml += '<p class="pL">' + product.product_name + '<br>';
-                        productHtml += product.price + ' ₽ <br>';
-                        productHtml += 'Категория: ' + product.category + '<br>';
-                        productHtml += product.description + '<br></p>';
-
-                        productHtml += '<ul><button onclick="update_basket(' + product.product_id + ', \'red\')" id="reduce_' + product.product_id +
-                            '" class="button btnL">-</button><p id="product_' + product.product_id + '">0</p><button onclick="update_basket(' +
-                            product.product_id + ', \'inc\')" id="increase_' + product.product_id + '" class="button btnL">+</button></ul>';
-                        //console.log(document.getElementById('product_' + product.product_id));
-                    });
-                });
-            //productHtml += userData;
-            document.getElementById('products').innerHTML = productHtml;
-            fetch('http://127.0.0.1:8000/products/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userData)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.basket && data.basket.length > 0) {
-                        data.basket.forEach(bItem => {
-                            console.log('product_' + bItem.product_id);
-                            document.getElementById('product_' + bItem.product_id).innerText = bItem.quantity;
-                        })
-                    }
-                })
-                .catch(error => console.error('Basket get error', error));
-        }
-        else {
-            alert('В базе нет продуктов');
-        }
+function show_products() {
+    fetch('http://127.0.0.1:8000/products/', {
+        method: 'GET',
     })
-    .catch(error => {
-        console.error('Error', error);
-        alert(error);
-        alert('Ошибка при получении продуктов');
-    });
+        .then(response => response.json())
+        .then(data => {
+            //data = JSON.parse(data);
+            if (data.products) {
+                placeOrderBtn.classList.remove('hidden');
+
+                cancelOrderBtn.classList.add('hidden');
+                let productHtml = '';
+                console.log(data.products);
+                Object.keys(data.products).forEach(
+
+                    product_category => {
+                        console.log(product_category);
+                        productHtml += '<h3>' + product_category + '</h3>';
+                        data.products[product_category].forEach(product => {
+                            productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="http://127.0.0.1:8000/static/slavichoney_app/images/' + product.image + '"> </div>';
+                            productHtml += '<p class="pL">' + product.product_name + '<br>';
+                            productHtml += product.price + ' ₽ <br>';
+                            productHtml += 'Категория: ' + product.category + '<br>';
+                            productHtml += product.description + '<br></p>';
+
+                            productHtml += '<ul><button onclick="update_basket(' + product.product_id + ', \'red\')" id="reduce_' + product.product_id +
+                                '" class="button btnL">-</button><p id="product_' + product.product_id + '">0</p><button onclick="update_basket(' +
+                                product.product_id + ', \'inc\')" id="increase_' + product.product_id + '" class="button btnL">+</button></ul>';
+                            //console.log(document.getElementById('product_' + product.product_id));
+                        });
+                    });
+                //productHtml += userData;
+                document.getElementById('products').innerHTML = productHtml;
+                fetch('http://127.0.0.1:8000/products/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.basket && data.basket.length > 0) {
+                            data.basket.forEach(bItem => {
+                                console.log('product_' + bItem.product_id);
+                                document.getElementById('product_' + bItem.product_id).innerText = bItem.quantity;
+                            })
+                        }
+                    })
+                    .catch(error => console.error('Basket get error', error));
+            }
+            else {
+                alert('В базе нет продуктов');
+            }
+        })
+        .catch(error => {
+            console.error('Error', error);
+            alert(error);
+            alert('Ошибка при получении продуктов');
+        });
 
 }
 
@@ -122,8 +125,8 @@ function update_basket(product_id, redOrInc) {
         .catch(error => console.error('Basket update error', error));
 }
 
-document.getElementById('place-order').addEventListener('click', () => {
-    console.log('click');
+placeOrderBtn.addEventListener('click', () => {
+    //console.log('click');
     fetch('http://127.0.0.1:8000/place_order/', {
         method: 'POST',
         headers: {
@@ -134,11 +137,10 @@ document.getElementById('place-order').addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
             if (data.order) {
-                document.getElementById('place-order').classList.add('hidden');
-                cancelOrderBtn = document.getElementById('cancel-order');
+
+                placeOrderBtn.classList.add('hidden');
                 cancelOrderBtn.classList.remove('hidden');
-                cancelOrderBtn.addEventListener('click', show_products);
-                
+
                 let orderHtml = '<p class="pL">Номер заказа:' + data.order[0].order_id + '</p><br>';
                 let sum_order = 0;
                 data.order.forEach(orderItem => {
