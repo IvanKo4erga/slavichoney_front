@@ -17,10 +17,12 @@ else{
 }
 tg = window.Telegram.WebApp;
 tg.expand();
+alert('tg');
+alert(tg);
 const user = tg.initDataUnsafe.user;
 console.log('User');
 alert(user);
-alert(tg);
+
 
 link_back = 'https://kocherga.pythonanywhere.com'
 if (user) {
