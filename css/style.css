@@ -13,6 +13,10 @@ html {
     min-height: 100vh;
 }
 
+.wrapper>* {
+    padding-inline: 16px;
+    padding-top: 8px;
+}
 
 ul {
     margin-left: 0;
@@ -71,117 +75,6 @@ ul {
 .preview-img-portrait {
     max-height: 100%;
     width: auto;
-}
-
-.contact {
-    max-width: 100%;
-    height: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 128px;
-}
-
-.about {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    max-width: 87.5rem;
-    min-width: 28.75rem;
-    margin: 0 auto;
-    margin-bottom: 272px;
-    display: -webkit-flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.about-text {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    max-width: 50rem;
-    margin-left: 24px;
-    margin-top: -24px;
-}
-
-.awards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    max-width: 87.5rem;
-    min-width: 28.75rem;
-    margin: 0 auto;
-    margin-bottom: 272px;
-    display: -webkit-flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.intro-text {
-    margin-bottom: 272px;
-    .pS{
-        margin-bottom: -4.5rem;
-        margin-left: 0.25rem;
-        margin-top: 7rem;
-    }
-}
-
-.awards-intro {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    max-width: 36rem;
-    margin-right: 20px;
-}
-
-.awards-awards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    max-width: 36rem;
-    margin-left: 20px;
-}
-
-.page-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
 }
 
 .page-footer ul {

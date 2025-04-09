@@ -67,8 +67,8 @@ if (user) {
                                 productHtml += product.description + '<br></p>';
 
                                 productHtml += '<ul><button onclick="update_basket(' + product.product_id + ', \'red\')" id="reduce_' + product.product_id +
-                                    '" class="button btnL">-</button><p id="product_' + product.product_id + '">0</p><button onclick="update_basket(' +
-                                    product.product_id + ', \'inc\')" id="increase_' + product.product_id + '" class="button btnL">+</button></ul>';
+                                    '" class="button btnS">-</button><p id="product_' + product.product_id + '">0</p><button onclick="update_basket(' +
+                                    product.product_id + ', \'inc\')" id="increase_' + product.product_id + '" class="button btnS">+</button></ul>';
                                 //console.log(document.getElementById('product_' + product.product_id));
                             });
                         });
@@ -159,7 +159,7 @@ if (user) {
                         //console.log(document.getElementById('product_' + product.product_id));
                     });
                     orderHtml += '<h4>ИТОГО...' + sum_order + '  ₽ </h4>';
-                    orderHtml += '<button onclick="confirm_order(' + data.order[0].order_id + ')" id="place-order" class="button btnL">Подтвердить заказ</button>'
+                    orderHtml += '<button onclick="confirm_order(' + data.order[0].order_id + ')" id="place-order" class="button btnS">Подтвердить заказ</button>'
                     //orderBtn.show();
 
                     document.getElementById('products').innerHTML = orderHtml;
