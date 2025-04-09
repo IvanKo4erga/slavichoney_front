@@ -185,6 +185,57 @@ h4 {
     line-height: 150%;
 }
 
-.hidden{
+.hidden {
     display: none;
+}
+
+.box {
+    position: relative;
+    margin-bottom: 20px;
+    /* Нижний отступ между элементами аккордеона */
+}
+
+.box:last-child {
+    margin-bottom: 0;
+    /* Для последнего элемента нижний отступ убираем */
+}
+
+.box .label {
+    position: relative;
+    padding: 20px;
+    /* Внутренний отступ для видимой части */
+    background-color: darkblue;
+    /* Цвет элемента аккордеона */
+    color: #fff;
+    /* Цвет шрифта элемента аккордеона */
+    cursor: pointer;
+    /* Меняем курсор при наведении */
+}
+
+.box .label::after {
+    content: "+";
+    /* Задаем иконку "+" для элемента аккордеона */
+    position: absolute;
+    top: 50%;
+    /* Выравнивание по центру */
+    transform: translateY(-50%);
+    right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box.active .label::after {
+    content: "\2014";
+    /* Меняем иконку на "-" при нажатии на элемент */
+}
+
+.box .content {
+    position: relative;
+    background-color: #fff;
+    /* Цвет фона контента */
+    overflow: hidden;
+    max-height: 0;
+    /* Скрываем контент */
+    transition: 0.3s;
+    /* Для плавности анимации */
 }

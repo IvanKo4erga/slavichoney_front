@@ -63,8 +63,9 @@ if (user) {
                                 productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="https://kocherga.pythonanywhere.com/static/slavichoney_app/images/' + product.image + '"> </div>';
                                 productHtml += '<p class="pS">' + product.product_name + '<br>';
                                 productHtml += product.price + ' ₽ <br>';
-                                productHtml += 'Категория: ' + product.category + '<br>';
-                                productHtml += product.description + '<br></p>';
+                                productHtml += 'Категория: ' + product.category + '<br></p>';
+                                productHtml += '<div class="box"><div class="label">Описание</div><div class="content"><p class="pS">' + product.description + '</p></div></div><br>';
+
 
                                 productHtml += '<ul><button onclick="update_basket(' + product.product_id + ', \'red\')" id="reduce_' + product.product_id +
                                     '" class="button btnS">-</button><p class="pS" id="product_' + product.product_id + '">0</p><button onclick="update_basket(' +
@@ -74,6 +75,25 @@ if (user) {
                         });
                     //productHtml += userData;
                     document.getElementById('products').innerHTML = productHtml;
+                    const boxes = Array.from(document.querySelectorAll(".box")); // считываем все элементы аккордеона в массив
+
+                    boxes.forEach((box) => {
+                        box.addEventListener("click", boxHandler); // при нажатии на бокс вызываем ф-ию boxHanlder
+                    });
+
+                    function boxHandler(e) {
+                        e.preventDefault(); // сбрасываем стандартное поведение
+                        let currentBox = e.target.closest(".box"); // определяем текущий бокс
+                        let currentContent = e.target.nextElementSibling; // находим скрытый контент
+                        currentBox.classList.toggle("active"); // присваиваем ему активный класс
+                        if (currentBox.classList.contains("active")) {
+                            // если класс активный ..
+                            currentContent.style.maxHeight = currentContent.scrollHeight + "px"; // открываем контент
+                        } else {
+                            // в противном случае
+                            currentContent.style.maxHeight = 0; // скрываем контент
+                        }
+                    }
                     fetch(`${link_back}/products/`, {
                         method: 'POST',
                         headers: {
