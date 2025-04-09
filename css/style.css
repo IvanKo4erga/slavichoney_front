@@ -191,9 +191,10 @@ h4 {
 
 .box {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     margin-inline: 8px;
     border-radius: 0.5rem;
+    overflow: hidden;
     /* Нижний отступ между элементами аккордеона */
 }
 
@@ -204,7 +205,8 @@ h4 {
 
 .box .label {
     position: relative;
-    padding: 20px;
+    padding: 24px;
+
     /* Внутренний отступ для видимой части */
     background-color: #B87C05;
     /* Цвет элемента аккордеона */
@@ -221,8 +223,8 @@ h4 {
     top: 50%;
     /* Выравнивание по центру */
     transform: translateY(-50%);
-    right: 20px;
-    font-size: 25px;
+    right: 16px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -234,6 +236,7 @@ h4 {
 .box .content {
     position: relative;
     background-color: #fff;
+    padding: 16px;
     /* Цвет фона контента */
     overflow: hidden;
     max-height: 0;
