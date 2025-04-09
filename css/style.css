@@ -98,7 +98,7 @@ ul {
     -ms-user-select: none;
     user-select: none;
     color: white;
-    background-color: #1B5095;
+    background-color: #6B8E23;
     border: none;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -114,12 +114,12 @@ ul {
 }
 
 .button:focus {
-    -webkit-box-shadow: 0px 0px 10px #1b50959a;
-    box-shadow: 0px 0px 10px #1b50959a;
+    -webkit-box-shadow: 0px 0px 10px #2b3615;
+    box-shadow: 0px 0px 10px #2b3615;
 }
 
 .button:active {
-    background-color: #143D73;
+    background-color: #4D6619;
 }
 
 .btnL {
@@ -192,6 +192,8 @@ h4 {
 .box {
     position: relative;
     margin-bottom: 20px;
+    margin-inline: 8px;
+    border-radius: 0.5rem;
     /* Нижний отступ между элементами аккордеона */
 }
 
@@ -204,7 +206,7 @@ h4 {
     position: relative;
     padding: 20px;
     /* Внутренний отступ для видимой части */
-    background-color: darkblue;
+    background-color: #B87C05;
     /* Цвет элемента аккордеона */
     color: #fff;
     /* Цвет шрифта элемента аккордеона */
