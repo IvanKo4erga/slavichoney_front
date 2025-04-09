@@ -191,7 +191,7 @@ h4 {
 
 .box {
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     border-radius: 0.5rem;
     overflow: hidden;
     /* Нижний отступ между элементами аккордеона */
@@ -204,7 +204,7 @@ h4 {
 
 .box .label {
     position: relative;
-    padding: 24px;
+    padding: 16px;
 
     /* Внутренний отступ для видимой части */
     background-color: #B87C05;
@@ -236,7 +236,7 @@ h4 {
     border-radius: 1rem;
     position: relative;
     background-color: #fff;
-    padding: 16px;
+    padding: 24px;
     /* Цвет фона контента */
     overflow: hidden;
     max-height: 0;
