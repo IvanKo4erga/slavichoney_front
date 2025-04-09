@@ -1,27 +1,10 @@
-let tg = window.Telegram;
-  
-if(tg != undefined){
-  if (tg.WebApp != undefined && tg.WebApp.initData != undefined){
-   
-  let safe    = tg.WebApp.initData;
-  
-  tg.WebApp.backgroundColor = '#3d3d3d';
-  tg.WebApp.headerColor = '#212121';
-  tg.WebApp.expand(); 
 
-  }    
-}
-else{
-
-    alert('tg undefined');
-}
 tg = window.Telegram.WebApp;
 tg.expand();
-alert('tg');
-alert(tg);
+
 const user = tg.initDataUnsafe.user;
 console.log('User');
-alert(user);
+
 
 
 link_back = 'https://kocherga.pythonanywhere.com'
@@ -205,7 +188,7 @@ if (user) {
             .then(response => response.json())
             .then(data => {
                 console.log(data.message);
-                //tg.close();
+                tg.close();
             }
             )
             .catch(error => console.error('Place order error', error));
