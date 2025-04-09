@@ -58,8 +58,8 @@ ul {
 }
 
 .ratio4 {
-    height: 560px;
-    width: 560px;
+    height: 240px;
+    width: 240px;
 }
 
 .ratio5 {
@@ -75,13 +75,6 @@ ul {
 .preview-img-portrait {
     max-height: 100%;
     width: auto;
-}
-
-.page-footer ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 5px;
 }
 
 ul {
@@ -190,27 +183,6 @@ h4 {
     font-family: 'Alegreya SC', serif;
     font-size: 1.6875rem;
     line-height: 150%;
-}
-
-input{
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-textarea{
-    width: 100%;
-    margin-bottom: 24px;
-}
-
-#submitForm{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-form{
-    margin-top: 16px;
 }
 
 .hidden{
