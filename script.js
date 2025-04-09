@@ -188,6 +188,7 @@ if (user) {
             .then(response => response.json())
             .then(data => {
                 //console.log(data.message);
+                alert('Заказ подтвержден')
                 tg.close();
             }
             )
