@@ -75,23 +75,23 @@ if (user) {
                         });
                     //productHtml += userData;
                     document.getElementById('products').innerHTML = productHtml;
-                    const boxes = Array.from(document.querySelectorAll(".box")); // считываем все элементы аккордеона в массив
+                    const boxes = Array.from(document.querySelectorAll(".box")); 
 
                     boxes.forEach((box) => {
-                        box.addEventListener("click", boxHandler); // при нажатии на бокс вызываем ф-ию boxHanlder
+                        box.addEventListener("click", boxHandler);
                     });
 
                     function boxHandler(e) {
-                        e.preventDefault(); // сбрасываем стандартное поведение
-                        let currentBox = e.target.closest(".box"); // определяем текущий бокс
-                        let currentContent = e.target.nextElementSibling; // находим скрытый контент
-                        currentBox.classList.toggle("active"); // присваиваем ему активный класс
+                        e.preventDefault(); 
+                        let currentBox = e.target.closest(".box"); 
+                        let currentContent = e.target.nextElementSibling; 
+                        currentBox.classList.toggle("active"); 
                         if (currentBox.classList.contains("active")) {
-                            // если класс активный ..
-                            currentContent.style.maxHeight = currentContent.scrollHeight + "px"; // открываем контент
+                            
+                            currentContent.style.maxHeight = currentContent.scrollHeight + "px"; 
                         } else {
-                            // в противном случае
-                            currentContent.style.maxHeight = 0; // скрываем контент
+                            
+                            currentContent.style.maxHeight = 0;
                         }
                     }
                     fetch(`${link_back}/products/`, {
