@@ -192,7 +192,6 @@ h4 {
 .box {
     position: relative;
     margin-bottom: 24px;
-    margin-inline: 8px;
     border-radius: 0.5rem;
     overflow: hidden;
     /* Нижний отступ между элементами аккордеона */
@@ -234,6 +233,7 @@ h4 {
 }
 
 .box .content {
+    border-radius: 0.5rem;
     position: relative;
     background-color: #fff;
     padding: 16px;
