@@ -170,6 +170,7 @@ if (user) {
                     let orderHtml = '<p class="pS">Номер заказа:' + data.order[0].order_id + '</p><br>';
                     let sum_order = 0;
                     data.order.forEach(orderItem => {
+                        if (orderItem.quantity > 0){
                         //productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="http://127.0.0.1:8000/static/slavichoney_app/images/' + product.image + '"> </div>';
                         orderHtml += '<p class="pS">' + orderItem.product_name + '...';
                         orderHtml += orderItem.price + ' ₽ X ';
@@ -177,6 +178,7 @@ if (user) {
                         orderHtml += 'Сумма...' + orderItem.price * orderItem.quantity + '  ₽ </p><br>';
                         sum_order += orderItem.price * orderItem.quantity;
                         //console.log(document.getElementById('product_' + product.product_id));
+                        }
                     });
                     orderHtml += '<h4>ИТОГО...' + sum_order + '  ₽ </h4>';
                     orderHtml += '<button onclick="confirm_order(' + data.order[0].order_id + ')" id="place-order" class="button btnS">Подтвердить заказ</button>'

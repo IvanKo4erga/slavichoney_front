@@ -194,33 +194,24 @@ h4 {
     margin-bottom: 16px;
     border-radius: 0.5rem;
     overflow: hidden;
-    /* Нижний отступ между элементами аккордеона */
 }
 
 .box:last-child {
     margin-bottom: 0;
-    /* Для последнего элемента нижний отступ убираем */
 }
 
 .box .label {
     position: relative;
     padding: 16px;
-
-    /* Внутренний отступ для видимой части */
     background-color: #B87C05;
-    /* Цвет элемента аккордеона */
     color: #fff;
-    /* Цвет шрифта элемента аккордеона */
     cursor: pointer;
-    /* Меняем курсор при наведении */
 }
 
 .box .label::after {
     content: "+";
-    /* Задаем иконку "+" для элемента аккордеона */
     position: absolute;
     top: 50%;
-    /* Выравнивание по центру */
     transform: translateY(-50%);
     right: 16px;
     font-size: 24px;
@@ -229,18 +220,13 @@ h4 {
 
 .box.active .label::after {
     content: "\2014";
-    /* Меняем иконку на "-" при нажатии на элемент */
 }
 
 .box .content {
     border-radius: 1rem;
     position: relative;
     background-color: #fff;
-    /*padding: 24px;*/
-    /* Цвет фона контента */
     overflow: hidden;
     max-height: 0;
-    /* Скрываем контент */
     transition: 0.3s;
-    /* Для плавности анимации */
 }
