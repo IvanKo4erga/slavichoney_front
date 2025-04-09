@@ -1,7 +1,7 @@
 
 tg = window.Telegram.WebApp;
 tg.expand();
-
+tg.backgroundColor = '#eeeeee';
 const user = tg.initDataUnsafe.user;
 console.log('User');
 
