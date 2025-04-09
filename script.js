@@ -67,7 +67,7 @@ if (user) {
                                 productHtml += product.description + '<br></p>';
 
                                 productHtml += '<ul><button onclick="update_basket(' + product.product_id + ', \'red\')" id="reduce_' + product.product_id +
-                                    '" class="button btnS">-</button><p id="product_' + product.product_id + '">0</p><button onclick="update_basket(' +
+                                    '" class="button btnS">-</button><p class="pS" id="product_' + product.product_id + '">0</p><button onclick="update_basket(' +
                                     product.product_id + ', \'inc\')" id="increase_' + product.product_id + '" class="button btnS">+</button></ul>';
                                 //console.log(document.getElementById('product_' + product.product_id));
                             });
