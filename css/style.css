@@ -233,7 +233,7 @@ h4 {
 }
 
 .box .content {
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     position: relative;
     background-color: #fff;
     padding: 16px;
