@@ -187,7 +187,7 @@ if (user) {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data.message);
+                //console.log(data.message);
                 tg.close();
             }
             )
