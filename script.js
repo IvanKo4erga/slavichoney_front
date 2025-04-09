@@ -61,7 +61,7 @@ if (user) {
                             productHtml += '<h3>' + product_category + '</h3>';
                             data.products[product_category].forEach(product => {
                                 productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="http://127.0.0.1:8000/static/slavichoney_app/images/' + product.image + '"> </div>';
-                                productHtml += '<p class="pL">' + product.product_name + '<br>';
+                                productHtml += '<p class="pS">' + product.product_name + '<br>';
                                 productHtml += product.price + ' ₽ <br>';
                                 productHtml += 'Категория: ' + product.category + '<br>';
                                 productHtml += product.description + '<br></p>';
@@ -147,11 +147,11 @@ if (user) {
                     placeOrderBtn.classList.add('hidden');
                     cancelOrderBtn.classList.remove('hidden');
                     cancelOrderBtn.addEventListener('click', () => { cancel_order(data.order[0].order_id) });
-                    let orderHtml = '<p class="pL">Номер заказа:' + data.order[0].order_id + '</p><br>';
+                    let orderHtml = '<p class="pS">Номер заказа:' + data.order[0].order_id + '</p><br>';
                     let sum_order = 0;
                     data.order.forEach(orderItem => {
                         //productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="http://127.0.0.1:8000/static/slavichoney_app/images/' + product.image + '"> </div>';
-                        orderHtml += '<p class="pL">' + orderItem.product_name + '...';
+                        orderHtml += '<p class="pS">' + orderItem.product_name + '...';
                         orderHtml += orderItem.price + ' ₽ X ';
                         orderHtml += orderItem.quantity + ' шт <br>';
                         orderHtml += 'Сумма...' + orderItem.price * orderItem.quantity + '  ₽ </p><br>';
