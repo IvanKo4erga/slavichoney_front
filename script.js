@@ -64,7 +64,7 @@ if (user) {
                                 productHtml += '<p class="pS">' + product.product_name + '<br>';
                                 productHtml += product.price + ' ₽ <br></p>';
                                 //productHtml += 'Категория: ' + product.category + '<br></p>';
-                                productHtml += '<div class="box"><div class="label" class="pS">Описание</div><div class="content"><p class="pS">' + product.description + '</p></div></div><br>';
+                                productHtml += '<div class="box"><div class="label pS">Описание</div><div class="content"><p class="pS">' + product.description + '</p></div></div><br>';
 
 
                                 productHtml += '<ul><button onclick="update_basket(' + product.product_id + ', \'red\')" id="reduce_' + product.product_id +
