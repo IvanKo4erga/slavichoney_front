@@ -60,7 +60,7 @@ if (user) {
                             console.log(product_category);
                             productHtml += '<h3>' + product_category + '</h3>';
                             data.products[product_category].forEach(product => {
-                                productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="http://127.0.0.1:8000/static/slavichoney_app/images/' + product.image + '"> </div>';
+                                productHtml += '<div class="img-conteiner ratio4"><img class="preview-img-portrait" src="https://kocherga.pythonanywhere.com/static/slavichoney_app/images/' + product.image + '"> </div>';
                                 productHtml += '<p class="pS">' + product.product_name + '<br>';
                                 productHtml += product.price + ' ₽ <br>';
                                 productHtml += 'Категория: ' + product.category + '<br>';
