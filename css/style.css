@@ -236,7 +236,7 @@ h4 {
     border-radius: 1rem;
     position: relative;
     background-color: #fff;
-    padding: 24px;
+    /*padding: 24px;*/
     /* Цвет фона контента */
     overflow: hidden;
     max-height: 0;
