@@ -230,3 +230,7 @@ h4 {
     max-height: 0;
     transition: 0.3s;
 }
+
+.container .box .content p {
+    padding: 20px;
+}
